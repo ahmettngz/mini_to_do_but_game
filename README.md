@@ -21,9 +21,9 @@
 
 ## 📸 Ekran Görüntüleri
 
-| Profil ve İstatistikler | Görevler (Aksiyon) | Sosyal (Lonca) |
+| Ana Sayfa | Görevler (Aksiyon) | Sosyal (Lonca) |
 |:---:|:---:|:---:|
-| <img src="link_to_screenshot_1" width="250"> | <img src="link_to_screenshot_2" width="250"> | <img src="link_to_screenshot_3" width="250"> |
+| <img src="screenshots/home.png" width="250"> | <img src="screenshots/task_view.png" width="250"> | <img src="" width="250"> |
 
 *(Not: Ekran görüntüleri uygulama geliştirildikçe güncellenecektir.)*
 
