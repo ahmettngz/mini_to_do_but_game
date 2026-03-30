@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import '../viewmodels/task_viewmodel.dart';
 import 'tasks_screen.dart';
 import 'add_task_screen.dart';
+import 'profile_screen.dart';
+import '../viewmodels/user_viewmodel.dart';
+import 'social_screen.dart';
 
 class MainLayout extends StatefulWidget {
   const MainLayout({super.key});
@@ -15,12 +18,13 @@ class _MainLayoutState extends State<MainLayout> {
   
   // UYGULAMANIN HAFIZASI (ViewModel) BURADA BAŞLIYOR
   final TaskViewModel _taskViewModel = TaskViewModel();
+  final UserViewModel _userViewModel = UserViewModel();
 
   // Ekranlarımızı dinamik (get) hale getirdik ki içine _taskViewModel'ı verebilelim
   List<Widget> get _screens => [
-    const Center(child: Text('Sol Ekran: Hesap ve İstatistikler', style: TextStyle(fontSize: 20))),
+    ProfileScreen(userViewModel: _userViewModel, taskViewModel: _taskViewModel),
     TasksScreen(viewModel: _taskViewModel), // Yeni Listeleme Ekranımız!
-    const Center(child: Text('Sağ Ekran: Sosyal ve Lonca', style: TextStyle(fontSize: 20))),
+    SocialScreen(), // Sosyal Akış Ekranı];
   ];
 
   @override

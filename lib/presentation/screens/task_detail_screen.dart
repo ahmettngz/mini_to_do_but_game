@@ -79,32 +79,47 @@ class TaskDetailScreen extends StatelessWidget {
     return const SizedBox(); // Hiçbiri değilse boşluk döndür
   }
 
-  // Sahte (Mock) Isı Haritası Çizici
-  Widget _buildMockHeatmap() {
-    return Wrap(
-      spacing: 4,
-      runSpacing: 4,
-      children: List.generate(30, (index) {
-        // Rastgele renk yoğunlukları oluşturuyoruz (Görsel test için)
-        int intensity = (index % 4 == 0) ? 0 : (index % 3) + 1;
-        Color boxColor;
-        if (intensity == 0) boxColor = Colors.grey[800]!;
-        else if (intensity == 1) boxColor = Colors.deepPurple[900]!;
-        else if (intensity == 2) boxColor = Colors.deepPurple;
-        else boxColor = Colors.deepPurpleAccent;
 
-        return Container(
-          width: 24,
-          height: 24,
-          decoration: BoxDecoration(
-            color: boxColor,
-            borderRadius: BorderRadius.circular(4),
-          ),
-        );
-      }),
-    );
-  }
+    // String renk ismini gerçek Flutter rengine çeviren yardımcı fonksiyon
+    Color _getBaseColor(String theme) {
+      switch (theme) {
+        case "pixel_red": return Colors.red;
+        case "pixel_green": return Colors.green;
+        case "pixel_cyan": return Colors.cyan;
+        case "pixel_blue": return Colors.blue;
+        case "pixel_purple": return Colors.deepPurpleAccent;
+        default: return Colors.deepPurple;
+      }
+    }
 
+    // Dinamik Isı Haritası Çizici
+    Widget _buildMockHeatmap() {
+      Color baseColor = _getBaseColor(task.colorTheme); // Görevin kendi rengini aldık!
+
+      return Wrap(
+        spacing: 4,
+        runSpacing: 4,
+        children: List.generate(30, (index) {
+          int intensity = (index % 4 == 0) ? 0 : (index % 3) + 1;
+          Color boxColor;
+        
+          // Yoğunluğa göre o rengin opaklığını (solukluğunu) ayarlıyoruz
+          if (intensity == 0) boxColor = Colors.grey[800]!;
+          else if (intensity == 1) boxColor = baseColor.withOpacity(0.4);
+          else if (intensity == 2) boxColor = baseColor.withOpacity(0.7);
+          else boxColor = baseColor; // Full yoğunluk
+
+          return Container(
+            width: 24,
+            height: 24,
+            decoration: BoxDecoration(
+              color: boxColor,
+              borderRadius: BorderRadius.circular(4),
+            ),
+          );
+        }),
+      );
+    }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

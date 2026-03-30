@@ -53,6 +53,26 @@ class MockTaskRepository {
           bonusXpUnderLimit: 20,
         ),
       ),
+      
+      // 5. Periyodik Görev (Bugün Aktif Olan - Duş Almak)
+      TaskModel(
+        id: "t_periodic_01",
+        title: "Duş Almak",
+        type: TaskType.periodic,
+        colorTheme: "pixel_blue",
+        periodicInterval: 2, // 2 günde bir
+        nextDueDate: DateTime.now().subtract(const Duration(days: 1)), // Dün veya bugün dolmuş (Yani AKTİF)
+      ),
+
+      // 6. Periyodik Görev (Dinlenen/Pasif Olan - Çiçekleri Sulamak)
+      TaskModel(
+        id: "t_periodic_02",
+        title: "Çiçekleri Sulamak",
+        type: TaskType.periodic,
+        colorTheme: "pixel_green",
+        periodicInterval: 3, // 3 günde bir
+        nextDueDate: DateTime.now().add(const Duration(days: 2)), // Yapılmasına daha 2 gün var (Yani PASİF)
+      ),
     ];
   }
 }

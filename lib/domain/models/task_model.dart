@@ -1,4 +1,4 @@
-enum TaskType { heavy, oneTime, continuous, repetitive, negative }
+enum TaskType { heavy, oneTime, continuous, repetitive, negative, periodic }
 
 // KADEME (TIER) MODELİ: Kolay, Orta, Zor seçenekleri için
 class TaskTier {
@@ -33,6 +33,8 @@ class TaskModel {
   final int? baseXp; // Sadece "Bir Kerelik" görevler için
   final Map<String, TaskTier>? tiers; // Ağır, Sürekli ve Tekrar Odaklı görevler için (easy, medium, hard)
   final TaskQuota? quota; // Sadece Negatif görevler için
+  final int? periodicInterval; // Kaç günde bir yapılacak? (Örn: 2)
+  final DateTime? nextDueDate; // Bir sonraki yapılması gereken tarih
 
   TaskModel({
     required this.id,
@@ -42,5 +44,7 @@ class TaskModel {
     this.baseXp,
     this.tiers,
     this.quota,
+    this.periodicInterval,
+    this.nextDueDate,
   });
 }

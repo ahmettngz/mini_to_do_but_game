@@ -25,6 +25,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
       case TaskType.continuous: return "Sürekli";
       case TaskType.repetitive: return "Tekrar Odaklı";
       case TaskType.negative: return "Negatif Görev";
+      case TaskType.periodic: return "Periyodik Görev";
     }
   }
 
@@ -41,6 +42,8 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
         return "Günlük rutin olarak birden fazla kez yapılanlar. Örn: 3 kez Diş fırçalamak.";
       case TaskType.negative:
         return "Kaçınmak istediğiniz, kotası olan alışkanlıklar. Örn: Max 2 saat Sosyal medya.";
+      case TaskType.periodic:
+        return "Belirli aralıklarla yapılması gereken görevler. Örn: 2 günde bir Kitap okumak.";  
     }
   }
 

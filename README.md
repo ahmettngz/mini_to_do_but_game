@@ -15,15 +15,17 @@
     * **Sürekli (Continuous):** Uzun süreli odak (Örn: Ders çalışma).
     * **Tekrar Odaklı (Repetitive):** Günlük rutinler (Örn: Diş fırçalama).
     * **Negatif (Vice/Limit):** Kötü alışkanlık kotaları. Limitin altında kalarak XP kazanın.
+    * **Günaşırı (Every Other Day):** Birkaç günde bir yapılması gereken görevler.
 * **Oyunlaştırma (Gamification):** Tamamlanan her görev, zorluk derecesine göre XP kazandırır. Seviye atlayın ve RPG tarzı unvanlar açın.
 * **Piksel Isı Haritası (Pixel Heatmap):** Aylık aktivite yoğunluğunuzu renkli, 16-bit tarzı bir ısı haritasında görselleştirin.
 * **Gizlilik Odaklı Sosyal Lonca:** Özel "Friend Code" sistemiyle arkadaşlarınızı ekleyin. Hangi görevlerin yapıldığı gizli kalır, sadece kazanılan XP ve gösterilen irade "Sosyal Akışta" paylaşılır.
+* **Günlük Boss Savaşları:** Her gün belirli saatte Boss ile dövüşün. Boss'u yenmek için görevleri tamamlayın. Boss'u yenerseniz başarımlar ve XP kazanın.
 
 ## 📸 Ekran Görüntüleri
 
-| Ana Sayfa | Görevler (Aksiyon) | Sosyal (Lonca) |
+| Profil | Ana Sayfa | Sosyal (Lonca) |
 |:---:|:---:|:---:|
-| <img src="screenshots/home.png" width="250"> | <img src="screenshots/task_view.png" width="250"> | <img src="" width="250"> |
+| <img src="screenshots/profile.png" width="250"> | <img src="screenshots/home.png" width="250"> | <img src="screenshots/social.png" width="250"> |
 
 *(Not: Ekran görüntüleri uygulama geliştirildikçe güncellenecektir.)*
 
